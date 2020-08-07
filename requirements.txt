@@ -3,5 +3,3 @@ Markdown
 requests
 martor
 gunicorn
-martor
-gunicorn
