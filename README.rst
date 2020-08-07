@@ -122,15 +122,20 @@ to get ``IMGUR_CLIENT_ID`` and ``IMGUR_API_KEY``.
         'hljs': 'true',         # to enable/disable hljs highlighting in preview
     }
 
-    # To setup the martor editor with label or not (default is False)
+    # To show the toolbar buttons
+    MARTOR_TOOLBAR_BUTTONS = [
+        'bold', 'italic', 'horizontal', 'heading', 'pre-code',
+        'blockquote', 'unordered-list', 'ordered-list',
+        'link', 'image-link', 'image-upload', 'emoji',
+        'direct-mention', 'toggle-maximize', 'help'
+    ]
+
+    # To setup the martor editor with title label or not (default is False)
     MARTOR_ENABLE_LABEL = False
 
     # Imgur API Keys
     MARTOR_IMGUR_CLIENT_ID = 'your-client-id'
     MARTOR_IMGUR_API_KEY   = 'your-api-key'
-
-    # Safe Mode
-    MARTOR_MARKDOWN_SAFE_MODE = True # default
 
     # Markdownify
     MARTOR_MARKDOWNIFY_FUNCTION = 'martor.utils.markdownify' # default
@@ -145,10 +150,11 @@ to get ``IMGUR_CLIENT_ID`` and ``IMGUR_API_KEY``.
 
         # Custom markdown extensions.
         'martor.extensions.urlize',
-        'martor.extensions.del_ins',    # ~~strikethrough~~ and ++underscores++
-        'martor.extensions.mention',    # to parse markdown mention
-        'martor.extensions.emoji',      # to parse markdown emoji
-        'martor.extensions.mdx_video',  # to parse embed/iframe video
+        'martor.extensions.del_ins',      # ~~strikethrough~~ and ++underscores++
+        'martor.extensions.mention',      # to parse markdown mention
+        'martor.extensions.emoji',        # to parse markdown emoji
+        'martor.extensions.mdx_video',    # to parse embed/iframe video
+        'martor.extensions.escape_html',  # to handle the XSS vulnerabilities
     ]
 
     # Markdown Extensions Configs
